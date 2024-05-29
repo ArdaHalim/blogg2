@@ -1,0 +1,10 @@
+<%- include("partials/header") %>
+<h1>Redigera inlägg</h1>
+
+<form action="/edit/<%= index %>" method="POST"> <!-- Korrigera formulärets handling för index -->
+  <textarea name="editedPost" style="width: 400px; height: 200px;"><%= postToEdit %></textarea>
+  <p></p>
+  <input type="submit" value="spara">
+</form>
+
+<%- include("partials/footer") %>

@@ -1,0 +1,203 @@
+/* Importera Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Poppins:wght@300;400;600&display=swap');
+
+/* Grundläggande styling för hela sidan */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #fef8f5;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Styling för header och footer */
+header, footer {
+    background-color: #ff8b94;
+    color: #fff;
+    text-align: center;
+    padding: 1em 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    flex-shrink: 0;
+    border-radius: 0 0 15px 15px;
+}
+
+header h1, footer p {
+    margin: 0;
+    font-weight: 600;
+    font-family: 'Fredoka One', cursive;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    gap: 1em;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 400;
+    transition: color 0.3s ease;
+    font-size: 1.1em;
+}
+
+nav ul li a:hover {
+    color: #ffb5a7;
+}
+
+/* Styling för huvudsektionen */
+main {
+    padding: 2em;
+    max-width: 900px;
+    margin: 2em auto;
+    background-color: #fff;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    transform: rotate(-1deg);
+    animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0) rotate(-1deg);
+    }
+    50% {
+        transform: translateY(-10px) rotate(1deg);
+    }
+}
+
+h2 {
+    text-align: center;
+    font-weight: 600;
+    color: #f76c6c;
+    margin-bottom: 1em;
+    font-family: 'Fredoka One', cursive;
+}
+
+#posts {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1em;
+}
+
+.post {
+    background-color: #ffb5a7;
+    border: 1px solid #ddd;
+    padding: 1em;
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    color: #fff;
+}
+
+.post:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.post h3 {
+    margin-top: 0;
+    font-weight: 600;
+}
+
+.post p {
+    font-size: 0.9em;
+    color: #fff;
+}
+
+.post a, .post form button {
+    display: inline-block;
+    margin: 0.5em 0;
+    padding: 0.5em 1em;
+    text-decoration: none;
+    background-color: #ff6f61;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 0.9em;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.post a:hover, .post form button:hover {
+    background-color: #ff3e41;
+    transform: translateY(-3px);
+}
+
+form {
+    margin-top: 2em;
+    text-align: center;
+}
+
+form div {
+    margin-bottom: 1em;
+}
+
+form label {
+    display: block;
+    margin-bottom: 0.5em;
+    font-weight: 600;
+    color: #f76c6c;
+}
+
+form textarea {
+    width: 100%;
+    padding: 0.75em;
+    font-size: 1em;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    resize: vertical;
+    transition: border-color 0.3s ease;
+}
+
+form textarea:focus {
+    border-color: #f76c6c;
+}
+
+form button {
+    padding: 0.75em 2em;
+    background-color: #ff6f61;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+form button:hover {
+    background-color: #ff3e41;
+    transform: translateY(-3px);
+}
+
+/* Responsiv design */
+@media (max-width: 768px) {
+    header, footer {
+        padding: 0.5em 0;
+    }
+    
+    nav ul {
+        flex-direction: column;
+        gap: 0.5em;
+    }
+}
+
+@media (max-width: 480px) {
+    main {
+        padding: 1em;
+    }
+    
+    .post {
+        padding: 0.5em;
+    }
+}
